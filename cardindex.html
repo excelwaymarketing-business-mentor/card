@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Excel Way Business Mentor</title>
+<meta name="theme-color" content="#0b6bb5">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230b6bb5'/><text x='50' y='68' font-size='56' text-anchor='middle' fill='%23fdb515' font-family='Arial' font-weight='700'>E</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#0b6bb5; --blue-deep:#084f87; --amber:#fdb515; --green:#3fa535;
+  --bg:#eef3f8; --surface:#ffffff; --ink:#14212e; --muted:#5a6b7c; --line:#d9e2ec;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0d1620;--surface:#16222f;--ink:#eaf1f8;--muted:#9fb1c3;--line:#27384a}
+}
+*{box-sizing:border-box;margin:0}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.5 Figtree,system-ui,sans-serif;min-height:100vh;display:flex;justify-content:center}
+main{width:100%;max-width:440px;background:var(--surface);overflow:hidden}
+@media (min-width:480px){main{margin:24px 0;border-radius:20px;box-shadow:0 10px 40px rgba(8,79,135,.18)}}
+
+.top{background:var(--blue);color:#fff;position:relative;padding:28px 24px 56px;overflow:hidden}
+.top::before,.top::after{content:"";position:absolute;top:-40px;bottom:-40px;width:34px;background:var(--amber);transform:skewX(-28deg)}
+.top::before{right:44px}
+.top::after{right:100px;width:12px}
+.brand{display:flex;align-items:center;gap:12px;position:relative}
+.brand svg{width:46px;height:46px;flex:none}
+.brand b{font:800 20px/1.1 'Bricolage Grotesque',Figtree,sans-serif;font-style:italic;display:block}
+.brand span{font-size:13px;opacity:.9}
+.who{padding:0 24px;margin-top:-28px;position:relative}
+.id{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+h1{font:800 28px/1.1 'Bricolage Grotesque',Figtree,sans-serif}
+.role{color:var(--muted);margin-top:4px}
+.offer{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);font-weight:600}
+
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:20px 24px 4px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border-radius:12px;font:600 15px Figtree,sans-serif;text-decoration:none;border:0;cursor:pointer;color:#fff;background:var(--blue)}
+.btn.save{background:var(--amber);color:#1b1400}
+.btn.wa{background:#1f8f4e}
+.btn.alt{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn svg{width:18px;height:18px;flex:none}
+
+.rows{padding:12px 24px 8px;list-style:none}
+.rows li{border-bottom:1px solid var(--line)}
+.rows li:last-child{border:0}
+.rows a{display:flex;gap:14px;align-items:center;padding:14px 0;color:inherit;text-decoration:none}
+.ico{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--blue);color:#fff;flex:none}
+.ico svg{width:18px;height:18px}
+.ico.g{background:var(--green)}
+.ico.y{background:var(--amber);color:#1b1400}
+.rows small{display:block;color:var(--muted);font-size:13px}
+.rows strong{font-weight:600;overflow-wrap:anywhere}
+a:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+
+.btn.book{grid-column:1/-1;background:var(--green);font-size:16px}
+section.blk{padding:8px 24px 4px}
+h2{font:800 20px/1.2 'Bricolage Grotesque',Figtree,sans-serif;margin:18px 0 12px;display:flex;align-items:center;gap:10px}
+h2::before{content:"";width:6px;height:20px;border-radius:3px;background:var(--amber)}
+.svc{display:grid;gap:10px;list-style:none;padding:0}
+.svc li{border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.svc b{display:block;color:var(--blue)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .svc b{color:#7fc0f5}}
+.svc span{color:var(--muted);font-size:14.5px}
+.quote{border-left:4px solid var(--amber);background:var(--bg);border-radius:0 12px 12px 0;padding:12px 14px;margin-bottom:10px}
+.quote p{font-size:15px}
+.quote cite{display:block;margin-top:8px;font-style:normal;font-size:13px;color:var(--muted)}
+.quote cite b{color:var(--ink)}
+.hours{border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14.5px}
+.hours p+p{margin-top:2px}
+.hours .btn{margin-top:12px}
+footer{padding:12px 24px 28px;text-align:center;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<main id="app"><p style="padding:32px;text-align:center;color:var(--muted)">Loading…</p></main>
+<script>
+var ICON={"call": "<svg viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z\"/></svg>", "wa": "<svg viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12 2a10 10 0 0 0-8.6 15.100L2 22l5-1.300A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.200 14.800l-.4-.2-2.400.6.600-2.300-.3-.4A8 8 0 0 1 12 4z\"/><path d=\"M9 8c-.3 0-.6.3-.7.700-.3 1 .2 2.300 1.300 3.600s2.500 2.300 3.800 2.500c.6.100 1.300-.4 1.500-1 .1-.3 0-.5-.2-.6l-1.300-.6c-.2-.1-.4 0-.5.100l-.5.600c-1-.4-1.800-1.200-2.300-2.200l.5-.5c.1-.1.200-.3.100-.5L9.700 8.400C9.600 8.100 9.400 8 9 8z\"/></svg>", "save": "<svg viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M15 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm-9 2v-2H4v-2h2V8h2v2h2v2H8v2zm9 1c-2.700 0-8 1.300-8 4v2h16v-2c0-2.700-5.300-4-8-4z\"/></svg>", "share": "<svg viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M18 16a3 3 0 0 0-2 .8l-7-4a3 3 0 0 0 0-1.600l7-4A3 3 0 1 0 15 5a3 3 0 0 0 .1.800l-7 4a3 3 0 1 0 0 4.400l7.100 4.100A3 3 0 1 0 18 16z\"/></svg>", "mail": "<svg viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm8 7 8-5H4zm0 2L4 9v8h16V9z\"/></svg>", "globe": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18\"/></svg>", "pin": "<svg viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.500A2.500 2.500 0 1 1 12 6.500a2.500 2.500 0 0 1 0 5z\"/></svg>"};
+var HEADER="<header class=\"top\">\n    <div class=\"brand\">\n      <svg viewBox=\"0 0 48 48\" aria-hidden=\"true\">\n        <path d=\"M24 3 43 13v22L24 45 5 35V13z\" fill=\"#fff\"/>\n        <path d=\"M24 6 40 14.5 24 23 8 14.5z\" fill=\"#fdb515\"/>\n        <path d=\"M8 17 22 24.5V42L8 34.5z\" fill=\"#0b6bb5\"/>\n        <path d=\"M26 24.5 40 17v17.5L26 42z\" fill=\"#3fa535\"/>\n      </svg>\n      <div><b>Excel Way<br>Business Mentor</b><span>Begin The Best Way</span></div>\n    </div>\n  </header>";
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function digits(p){return String(p||'').replace(/\D/g,'')}
+function render(D,e){
+  var c=D.company, ph=digits(e.phone), emails=[e.email,e.email2].filter(Boolean);
+  var wa='https://wa.me/'+ph+'?text='+encodeURIComponent('Hi '+e.name+', I\u2019d like to book a free consultation.');
+  document.title=e.name+' \u2013 '+c.name;
+  var h=HEADER+'<section class="who"><div class="id"><h1>'+esc(e.name)+'</h1><p class="role">'+esc(e.designation)+' \u00b7 '+esc(c.name)+'</p><p class="offer">'+esc(c.offer)+'</p></div></section>';
+  h+='<nav class="actions" aria-label="Quick actions"><a class="btn" href="tel:+'+ph+'">'+ICON.call+'Call</a>'+
+     '<a class="btn wa" href="'+esc(wa)+'" target="_blank" rel="noopener">'+ICON.wa+'WhatsApp</a>'+
+     '<button class="btn save" id="save" type="button">'+ICON.save+'Save contact</button>'+
+     '<button class="btn alt" id="share" type="button">'+ICON.share+'Share</button>'+
+     '<a class="btn book" href="#book">Book a free consultation</a></nav>';
+  var rows='<li><a href="tel:+'+ph+'"><span class="ico">'+ICON.call+'</span><span><small>Phone</small><strong>'+esc(e.phone)+'</strong></span></a></li>';
+  emails.forEach(function(m){rows+='<li><a href="mailto:'+esc(m)+'"><span class="ico y">'+ICON.mail+'</span><span><small>Email</small><strong>'+esc(m)+'</strong></span></a></li>'});
+  rows+='<li><a href="'+esc(c.website)+'" target="_blank" rel="noopener"><span class="ico">'+ICON.globe+'</span><span><small>Website</small><strong>'+esc(c.websiteLabel)+'</strong></span></a></li>';
+  rows+='<li><a href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(c.mapsQuery)+'" target="_blank" rel="noopener"><span class="ico g">'+ICON.pin+'</span><span><small>Address \u2013 tap for directions</small><strong>'+esc(c.address)+'</strong></span></a></li>';
+  h+='<ul class="rows">'+rows+'</ul>';
+  h+='<section class="blk" id="services"><h2>What we do</h2><ul class="svc">'+D.services.map(function(s){return '<li><b>'+esc(s.title)+'</b><span>'+esc(s.desc)+'</span></li>'}).join('')+'</ul></section>';
+  h+='<section class="blk" id="testimonials"><h2>What clients say</h2>'+D.testimonials.map(function(t){return '<blockquote class="quote"><p>\u201c'+esc(t.quote)+'\u201d</p><cite><b>'+esc(t.name)+'</b><br>'+esc(t.role)+'</cite></blockquote>'}).join('')+'</section>';
+  h+='<section class="blk" id="book"><h2>Book a free consultation</h2><div class="hours"><p>Tell us what you need and we\u2019ll reach out, or set up a quick call.</p><p>'+esc(c.hours)+'</p>'+
+     '<a class="btn wa" href="'+esc(wa)+'" target="_blank" rel="noopener">Book on WhatsApp</a>'+
+     '<a class="btn alt" style="margin-top:10px" href="'+esc(c.enquiryUrl)+'" target="_blank" rel="noopener">Send an enquiry online</a></div></section>';
+  h+='<footer>'+esc(c.footer)+'</footer>';
+  document.getElementById('app').innerHTML=h;
+
+  var lines=['BEGIN:VCARD','VERSION:3.0','N:'+e.name+';;;;','FN:'+e.name,'ORG:'+c.name,'TITLE:'+e.designation,'TEL;TYPE=CELL,VOICE:+'+ph];
+  emails.forEach(function(m){lines.push('EMAIL;TYPE=WORK:'+m)});
+  lines.push('URL:'+c.website,'ADR;TYPE=WORK:;;'+c.address.replace(/,/g,'\\,')+';;;;India','END:VCARD');
+  document.getElementById('save').onclick=function(){
+    var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([lines.join('\r\n')],{type:'text/vcard'}));
+    a.download=e.id+'.vcf';document.body.appendChild(a);a.click();a.remove();};
+  var sh=document.getElementById('share');
+  sh.onclick=function(){var d={title:e.name+' \u2013 '+c.name,url:location.href};
+    if(navigator.share){navigator.share(d).catch(function(){})}
+    else if(navigator.clipboard){navigator.clipboard.writeText(location.href).then(function(){sh.lastChild.textContent='Link copied'})}};
+}
+function fail(msg){document.getElementById('app').innerHTML='<p style="padding:32px;text-align:center">'+msg+'</p>'}
+fetch('data.json',{cache:'no-cache'}).then(function(r){return r.json()}).then(function(D){
+  var id=(new URLSearchParams(location.search).get('id')||'').toLowerCase();
+  var list=D.employees||[], e=list.filter(function(x){return String(x.id).toLowerCase()===id})[0];
+  if(!id) e=list[0];
+  if(!e){fail('This card was not found. <a href="./">Open the main card</a>');return}
+  render(D,e);
+}).catch(function(){fail('Could not load the card. Please check your connection and try again.')});
+</script>
+</body>
+</html>
